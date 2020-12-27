@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.appaugmentedreality.app.ui.auth.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.appaugmentedreality.app.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_regFragment"
+            app:destination="@id/regFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/regFragment"
+        android:name="com.appaugmentedreality.app.ui.auth.RegFragment"
+        android:label="fragment_reg"
+        tools:layout="@layout/fragment_reg" >
+        <action
+            android:id="@+id/action_regFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.appaugmentedreality.app.ui.home.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>

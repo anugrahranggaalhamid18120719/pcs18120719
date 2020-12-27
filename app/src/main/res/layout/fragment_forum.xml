@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.appaugmentedreality.app.ui.forum.ForumViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.forum.ForumFragment">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipeRefresh">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:data= "@{viewModel.detailResp}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="@+id/recyclerView"
+                android:padding="8dp"
+                android:clipToPadding="false"
+                android:background="#eee"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+    </FrameLayout>
+</layout>
